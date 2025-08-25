@@ -1,0 +1,27 @@
+[Unit]
+Description=GridPointer - Grid-based cursor control daemon
+After=graphical-session.target
+Wants=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/gridpointer
+Restart=on-failure
+RestartSec=5
+Environment=WAYLAND_DISPLAY=wayland-1
+
+# Security settings
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=%h/.config/gridpointer
+ProtectControlGroups=yes
+ProtectKernelModules=yes
+ProtectKernelTunables=yes
+RestrictRealtime=yes
+RestrictSUIDSGID=yes
+
+[Install]
+WantedBy=default.target
+
