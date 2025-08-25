@@ -1,6 +1,54 @@
 [package]
 name = "gridpointer"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
+authors = ["Your Name <your.email@example.com>"]
+description = "Grid-based cursor control daemon for Wayland"
+license = "MIT"
+repository = "https://github.com/yourusername/gridpointer"
+keywords = ["wayland", "cursor", "grid", "input", "daemon"]
+categories = ["gui", "game-development", "accessibility"]
 
 [dependencies]
+# Wayland
+wayland-client = "0.31"
+wayland-protocols = "0.31"
+wayland-protocols-wlr = "0.2"
+
+# Input handling
+evdev = "0.12"
+
+# Configuration
+serde = { version = "1.0", features = ["derive"] }
+toml = "0.8"
+notify = "6.1"
+
+# Error handling
+thiserror = "1.0"
+anyhow = "1.0"
+
+# Async runtime
+tokio = { version = "1.0", features = ["full"] }
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# Utilities
+dirs = "5.0"
+
+[dev-dependencies]
+tokio-test = "0.4"
+
+[[bin]]
+name = "gridpointer"
+path = "src/main.rs"
+
+[[example]]
+name = "grid_demo"
+path = "examples/grid_demo.rs"
+
+[[example]]
+name = "dash_demo"
+path = "examples/dash_demo.rs"
+`

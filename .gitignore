@@ -1,1 +1,26 @@
+# Rust
 /target
+Cargo.lock
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Config (for development)
+/config.toml
+
+# Build artifacts
+*.deb
+*.rpm
+*.tar.gz
+
